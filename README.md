@@ -28,4 +28,4 @@ Script Path: src/main/pipeline/pipeline.groovy
 ## 其它
 Jenkins版本: ver. 2.190.2
 
-注:jenkins旧版本对groovy部分语法支持不同
+注:jenkins旧版本可能对groovy部分语法不支持
