@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1">
+    <test name="测试用例">
+        <packages>
+            <package name="com.zhish"/>
+        </packages>
+    </test>
+</suite>
