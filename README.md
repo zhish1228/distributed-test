@@ -29,3 +29,6 @@ Script Path: src/main/pipeline/pipeline.groovy
 Jenkins版本: ver. 2.190.2
 
 注:jenkins旧版本可能对groovy部分语法不支持
+
+## Email
+zhish1228@163.com
