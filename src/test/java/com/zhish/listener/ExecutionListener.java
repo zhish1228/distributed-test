@@ -28,11 +28,11 @@ public class ExecutionListener implements IExecutionListener {
     log.info("开始读取测试用例配置信息");
     // 通过yaml获取所有用例
     getAllCases();
-
     // 获取jenkins环境变量
-    getEnv();
+    getJenkinsJobTag();
     // 获取子任务id
     TaskUtil.getId();
+    // 设置当前任务的用例列表
     setTargetCase();
   }
 
@@ -46,11 +46,11 @@ public class ExecutionListener implements IExecutionListener {
     log.info("当前task执行用例为:" + String.join(",", TestConfig.targetCases));
   }
 
-  private void getEnv() {
+  private void getJenkinsJobTag() {
 
     String buildTag = System.getenv("BUILD_TAG");
     TestConfig.tagNode = TestConfig.ROOT_NODE + "/" + buildTag;
-    TestConfig.zkNode = TestConfig.tagNode + "/" + TestConfig.TASK_NODE;
+    TestConfig.taskNode = TestConfig.tagNode + "/" + TestConfig.TASK_NODE_NAME;
     String taskCount = System.getProperty("taskCount");
     TestConfig.taskCount = Integer.valueOf(taskCount);
     log.info("taskCount is:" + taskCount);

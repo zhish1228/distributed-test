@@ -39,8 +39,8 @@ public class TaskUtil {
     client.start();
     try {
       String path =
-          client.create().creatingParentsIfNeeded().withMode(CreateMode.PERSISTENT_SEQUENTIAL).forPath(TestConfig.zkNode);
-      String split = path.split(TestConfig.TASK_NODE)[1];
+          client.create().creatingParentsIfNeeded().withMode(CreateMode.PERSISTENT_SEQUENTIAL).forPath(TestConfig.taskNode);
+      String split = path.split(TestConfig.TASK_NODE_NAME)[1];
       TestConfig.taskId = Integer.valueOf(split);
       log.info("task id is :" + TestConfig.taskId);
     } catch (Exception e) {
