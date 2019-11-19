@@ -29,11 +29,11 @@ public class ExecutionListener implements IExecutionListener {
     // 通过yaml获取所有用例
     getAllCases();
     // 获取jenkins环境变量
-    getJenkinsJobTag();
+//    getJenkinsJobTag();
     // 获取子任务id
-    TaskUtil.getId();
+//    TaskUtil.getId();
     // 设置当前任务的用例列表
-    setTargetCase();
+//    setTargetCase();
   }
 
   private void setTargetCase() {
@@ -59,11 +59,10 @@ public class ExecutionListener implements IExecutionListener {
   private void getAllCases() {
     String casefile = System.getProperty("caseFile");
     Yaml yaml = new Yaml();
-    File file = new File("src/test/resources/" + casefile + ".yml");
+    File file = new File("src/test/resources/case.yml");
     try {
       TestCaseYaml testCaseYaml = yaml.loadAs(new FileInputStream(file), TestCaseYaml.class);
       TestConfig.testCases.addAll(testCaseYaml.getCases());
-      log.info("读取用例配置文件" + casefile + ".yml");
     } catch (FileNotFoundException e) {
       log.error("无法读取yml文件" + e);
     }
@@ -76,6 +75,6 @@ public class ExecutionListener implements IExecutionListener {
    */
   @Override
   public void onExecutionFinish() {
-    TaskUtil.clear();
+//    TaskUtil.clear();
   }
 }

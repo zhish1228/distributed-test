@@ -23,9 +23,9 @@ public class TestFilterAnnotationTransformer implements IAnnotationTransformer {
     // 根据当前用例列表动态修改@Test注解的参数值
     String testName = annotation.getTestName();
     if (testName != null) {
-      if (TestConfig.targetCases.contains(testName)) {
+      if (TestConfig.testCases.contains(testName)) {
         // 根据yaml配置重排用例执行顺序
-        annotation.setPriority(TestConfig.targetCases.indexOf(testName));
+        annotation.setPriority(TestConfig.testCases.indexOf(testName));
       } else {
         // 不在列表中的禁用用例
         annotation.setEnabled(false);
